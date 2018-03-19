@@ -2,10 +2,10 @@
 // Projects
 // *****************************************************************************
 
-lazy val `streamarchitect.io-doc` =
+lazy val `streamarchitect-io-doc` =
   project
     .in(file("."))
-    .enablePlugins(AutomateHeaderPlugin)
+    .enablePlugins(AutomateHeaderPlugin,ParadoxPlugin)
     .settings(settings)
     .settings(
       libraryDependencies ++= Seq(
@@ -56,7 +56,8 @@ lazy val commonSettings =
     Compile / unmanagedSourceDirectories := Seq((Compile / scalaSource).value),
     Test / unmanagedSourceDirectories := Seq((Test / scalaSource).value),
     testFrameworks += new TestFramework("utest.runner.Framework"),
-    wartremoverWarnings in (Compile, compile) ++= Warts.unsafe
+    wartremoverWarnings in (Compile, compile) ++= Warts.unsafe,
+    paradoxTheme := Some(builtinParadoxTheme("generic"))
 )
 
 lazy val scalafmtSettings =
