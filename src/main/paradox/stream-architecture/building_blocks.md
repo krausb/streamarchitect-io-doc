@@ -1,8 +1,13 @@
 Building Block View
 ===================
 
-Whitebox Overall System
------------------------
+Level 0: Overall Platform
+-------------------------
+
+![Level 0 - Overall Platform](building_blocks/level-0.png)
+
+Level 1: Data Ingest Pipeline
+-----------------------------
 
 ![Level 1 - Data Ingest](building_blocks/level-1-ingestion.png)
 
