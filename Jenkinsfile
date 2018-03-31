@@ -13,7 +13,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Build'
-        sh 'sbt clean compile paradox'
+        sbt('clean compile paradox')
       }
     }
   }
