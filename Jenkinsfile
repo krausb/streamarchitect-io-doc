@@ -1,18 +1,12 @@
 pipeline {
   environment{
-    COURSIER_CACHE="/home/jenkins/.coursier-cache"
+    COURSIER_CACHE="/var/jenkins_home/.coursier-cache"
   }
   triggers {
     //pollSCM needed due to https://mohamicorp.atlassian.net/wiki/spaces/DOC/pages/381288449/Configuring+Webhook+To+Jenkins+for+Bitbucket+Git+Plugin
     pollSCM('0 0 1 1 *')
-    bitbucketPush()
   }
   stages {
-    stage('Notify Stash build starting'){
-      steps {
-        step([$class: 'StashNotifier'])
-      }
-    }
     stage('Style Check') {
       steps {
         echo 'Style Check'
